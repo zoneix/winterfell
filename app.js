@@ -1,9 +1,11 @@
 var express = require('express');
 var app = express();
-
+var myvalue = process.env.MYVALUE;
+var myvalue2 = "Harish";
 app.get('/', function(req, res) {
   res.send({
-    "Output": "some stuff"
+    "myvalue2": myvalue2,
+    "myvalue" : myvalue
   });
   console.log (process.env.MYVALUE);
 });
