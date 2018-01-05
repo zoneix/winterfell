@@ -8,6 +8,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
+  res.set('Content-Type', 'text/html');
   res.send({
     "Output": "GOT A POST - Hello World!"
   });
