@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
 app.post('/', function(req, res) {
   res.set('Content-Type', 'text/html');
   res.send({
-    "Output": "GOT A POST - Hello World!"
+    "Output": "process.env.MYVALUE"
   });
   res.send('<p>some html here</p>');
 });
