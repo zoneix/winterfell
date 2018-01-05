@@ -3,8 +3,9 @@ var app = express();
 
 app.get('/', function(req, res) {
   res.send({
-    "Output": process.env.MYVALUE
+    "Output": "some stuff"
   });
+  console.log (process.env.MYVALUE);
 });
 
 app.post('/', function(req, res) {
