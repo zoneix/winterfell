@@ -3,14 +3,15 @@ var app = express();
 
 app.get('/', function(req, res) {
   res.send({
-    "Output": "Hello World!"
+    "Output": "GET REQUEST RECIEVED - Hello World!"
   });
 });
 
 app.post('/', function(req, res) {
   res.send({
-    "Output": "Hello World!"
+    "Output": "GOT A POST - Hello World!"
   });
+  res.send('<p>some html here</p>');
 });
 
 
