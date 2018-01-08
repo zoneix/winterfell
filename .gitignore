@@ -36,3 +36,4 @@ typings/
 .next
 
 .vscode/settings.json
+/.metadata/
