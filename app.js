@@ -1,13 +1,13 @@
 var express = require('express');
 var app = express();
-var myvalue = process.env.MYVALUE;
+var myvalue = process.env.S3_BUCKET;
 var myvalue2 = "Harish";
 app.get('/', function(req, res) {
   res.send({
     "myvalue2": myvalue2,
     "myvalue" : myvalue
   });
-  console.log (process.env.MYVALUE);
+  //console.log (process.env.MYVALUE);
 });
 
 app.get('/keepalive', function(req, res) {
