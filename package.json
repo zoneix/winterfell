@@ -1,10 +1,10 @@
 {
-    "name": "ozark-healthcare",
-    "description": "Cisco Spark SDK demo in Healthcare",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "latest",
-        "aws-serverless-express": "latest"
-    }
+	"name": "ozark-healthcare",
+	"description": "Cisco Spark SDK demo in Healthcare",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"express": "latest",
+		"aws-serverless-express": "latest"
+	}
 }

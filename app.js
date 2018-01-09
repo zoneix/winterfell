@@ -10,6 +10,14 @@ app.get('/', function(req, res) {
   console.log (process.env.MYVALUE);
 });
 
+app.get('/keepalive', function(req, res) {
+	var timestamp = Date.now();
+	  res.send({
+		  timestamp
+	  });
+	  console.log (process.env.MYVALUE);
+	});
+
 app.post('/', function(req, res) {
   res.set('Content-Type', 'text/html');
   res.send({
