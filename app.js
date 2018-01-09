@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var myvalue = process.env.JAVA_HOME;
+var myvalue = process.env.VAR1;
 var myvalue2 = process.env.PASSWORD;
 app.get('/', function(req, res) {
   res.send({
