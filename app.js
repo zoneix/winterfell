@@ -1,11 +1,13 @@
 var express = require('express');
 var app = express();
-var myvalue = process.env.VAR1;
-var myvalue2 = process.env.PASSWORD;
+var myvalue = process.env.VAR1,
+	myvalue2 = process.env.PASSWORD,
+	myvalue3 = process.env.VAR2;
 app.get('/', function(req, res) {
   res.send({
-    "myvalue2": myvalue2,
-    "myvalue" : myvalue
+	  "myvalue3": myvalue3,
+	  "myvalue2": myvalue2,
+	  "myvalue" : myvalue
   });
   //console.log (process.env.MYVALUE);
 });

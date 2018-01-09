@@ -14,6 +14,13 @@ phases:
       - export PASSWORD=$LOGIN_PASSWORD
       - echo "build stage - PASSWORD" $PASSWORD
       - aws cloudformation package --template template.yml --s3-bucket $S3_BUCKET --output-template template-export.yml
+  post_build:
+    commands:
+      - npm install
+      - export VAR2=$JAVA_HOME
+      - echo "post build stage - VAR2" $VAR2
+      - export PASSWORD=$LOGIN_PASSWORD
+      - echo "post build stage - PASSWORD" $PASSWORD
 artifacts:
   type: zip
   files:
