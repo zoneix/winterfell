@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var myvalue = process.env.S3_BUCKET;
+var myvalue = process.env.JAVA_HOME;
 var myvalue2 = "Harish";
 app.get('/', function(req, res) {
   res.send({
