@@ -16,8 +16,7 @@ Resources:
       Runtime: nodejs4.3
       Environment:
         Variables: 
-          VAR1: "numnuned",
-          VAR2: "yiidoo"
+          VAR1: "numnuned"
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
