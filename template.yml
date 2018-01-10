@@ -8,6 +8,10 @@ Parameters:
     Type: String
     Description: AWS CodeStar projectID used to associate new resources to team members
 
+  CLIENTID:
+    Type: String
+    Description: OAUTH client id for Spark SSO
+
 Resources:
   Winterfell:
     Type: AWS::Serverless::Function
@@ -18,7 +22,7 @@ Resources:
         Variables: 
           VAR1: "numnuned"
           VAR2: 12341432
-          PASSWORD: $LOGIN_PASSWORD
+          PASSWORD: !Ref ProjectId
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
