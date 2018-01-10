@@ -18,6 +18,7 @@ Resources:
         Variables: 
           VAR1: "numnuned"
           VAR2: {ssm:dockerLoginPassword}
+          PASSWORD: $LOGIN_PASSWORD
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
