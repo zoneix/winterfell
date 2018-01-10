@@ -17,7 +17,7 @@ Resources:
       Environment:
         Variables: 
           VAR1: "numnuned"
-          VAR2: {ssm:dockerLoginPassword}
+          VAR2: 12341432
           PASSWORD: $LOGIN_PASSWORD
       Role:
         Fn::ImportValue:
