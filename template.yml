@@ -7,8 +7,9 @@ Parameters:
   ProjectId:
     Type: String
     Description: AWS CodeStar projectID used to associate new resources to team members
-  SPARK_OAUTH_CLIENT_ID:
+  SparkOAuthClientID:
     Type: AWS::SSM::Parameter
+    Name: SPARK_OAUTH_CLIENT_ID
     Description: OAUTH client id for Spark SSO
 
 Resources:
