@@ -6,11 +6,9 @@ env:
     LOGIN_PASSWORD: "dockerLoginPassword"
     
 phases:
-  pre_build:
-    commands:
-	  - gem install aws-sdk
   build:
     commands:
+	  - gem install aws-sdk
       - npm install
       - export VAR1=$JAVA_HOME
       - echo "build stage - VAR1" $VAR1
