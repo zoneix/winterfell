@@ -18,7 +18,7 @@ Resources:
         Variables: 
           VAR1: "numnuned"
           VAR2: 12341432
-          PASSWORD: $LOGIN_PASSWORD
+          PASSWORD: !Ref ProjectId
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
