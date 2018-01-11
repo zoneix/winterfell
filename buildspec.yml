@@ -4,6 +4,8 @@ env:
     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
   parameter-store:
     LOGIN_PASSWORD: "dockerLoginPassword"
+    CLIENTID: "SparkOAuthClientID"
+    CLIENTSECRET: "SparkOAuthClientSecret"
     
 phases:
   build:
@@ -16,6 +18,10 @@ phases:
       - aws cloudformation package --template template.yml --s3-bucket $S3_BUCKET --output-template template-export.yml
       - more get_ssm.rb
       - more config.json
+      - touch .env
+      - echo "CLIENTID = " $CLIENTID >> .env
+      - echo "CLIENTSEC = " $CLIENTSECRET >> .env
+      - more .env
   post_build:
     commands:
       - export VAR2=$JAVA_HOME
