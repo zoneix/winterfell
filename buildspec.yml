@@ -22,12 +22,14 @@ phases:
       - echo "CLIENTID=" $CLIENTID >> .env
       - echo "CLIENTSEC=" $CLIENTSECRET >> .env
       - more .env
+      - touch build.file
   post_build:
     commands:
       - export VAR2=$JAVA_HOME
       - echo "post build stage - VAR2" $VAR2
       - export PASSWORD=$LOGIN_PASSWORD
       - echo "post build stage - PASSWORD" $PASSWORD
+      - touch post_build.file
 artifacts:
   type: zip
   files:
