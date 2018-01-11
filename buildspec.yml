@@ -8,6 +8,9 @@ env:
     CLIENTSECRET: "SparkOAuthClientSecret"
     
 phases:
+  pre_build:
+    commands:
+      - touch pre_build.file
   build:
     commands:
       - npm install
