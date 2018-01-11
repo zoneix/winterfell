@@ -19,8 +19,8 @@ phases:
       - more get_ssm.rb
       - more config.json
       - touch .env
-      - echo "CLIENTID = " $CLIENTID >> .env
-      - echo "CLIENTSEC = " $CLIENTSECRET >> .env
+      - echo "CLIENTID=" $CLIENTID >> .env
+      - echo "CLIENTSEC=" $CLIENTSECRET >> .env
       - more .env
   post_build:
     commands:
