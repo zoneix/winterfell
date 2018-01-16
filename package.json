@@ -6,6 +6,12 @@
 	"dependencies": {
 		"express": "latest",
 		"aws-serverless-express": "latest",
-		"dotenv": "latest"
+		"dotenv": "latest",
+		"passport": "latest",
+		"lodash": "latest",
+		"express-session": "latest",
+		"cookie-parser": "latest",
+		"morgan": "latest",
+		"passport-cisco-spark": "latest"
 	}
 }
