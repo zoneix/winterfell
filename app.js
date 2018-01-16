@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
-var myvalue = process.env.VAR1,
-	myvalue2 = process.env.PASSWORD,
+var myvalue = process.env.CLIENTID,
+	myvalue2 = process.env.CLIENTSEC,
 	myvalue3 = process.env.VAR2;
 app.get('/', function(req, res) {
   res.send({

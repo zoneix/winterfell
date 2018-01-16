@@ -4,25 +4,33 @@ env:
     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
   parameter-store:
     LOGIN_PASSWORD: "dockerLoginPassword"
+    CLIENTID: "SparkOAuthClientID"
+    CLIENTSECRET: "SparkOAuthClientSecret"
     
 phases:
+  pre_build:
+    commands:
+      - touch pre_build.file
+      - touch .env
+      - echo "CLIENTID=" $CLIENTID >> .env
+      - echo "CLIENTSEC=" $CLIENTSECRET >> .env
   build:
     commands:
-	  - gem install aws-sdk
       - npm install
       - export VAR1=$JAVA_HOME
       - echo "build stage - VAR1" $VAR1
       - export PASSWORD=$LOGIN_PASSWORD
       - echo "build stage - PASSWORD" $PASSWORD
       - aws cloudformation package --template template.yml --s3-bucket $S3_BUCKET --output-template template-export.yml
-	  - ruby get_ssm.rb
+      - more .env
+      - touch build.file
   post_build:
     commands:
       - export VAR2=$JAVA_HOME
       - echo "post build stage - VAR2" $VAR2
       - export PASSWORD=$LOGIN_PASSWORD
       - echo "post build stage - PASSWORD" $PASSWORD
-	  - more config.json
+      - touch post_build.file
 artifacts:
   type: zip
   files:
