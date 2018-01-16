@@ -37,3 +37,5 @@ typings/
 
 .vscode/settings.json
 /.metadata/
+/RemoteSystemsTempFiles/
+.project
