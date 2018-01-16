@@ -39,3 +39,4 @@ typings/
 /.metadata/
 /RemoteSystemsTempFiles/
 .project
+.idea
